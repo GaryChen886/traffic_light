@@ -19,34 +19,26 @@ module traffic_light (
         if(rst)begin
             state <= GREEN;
             counter <= 1;
-            end
+        end
         else if(pass && counter > 511)begin
             state <= GREEN;
             counter <= 1;
-            end
+        end
         else begin
-                
-            if(counter < 512)begin
+            if(counter < 512)
                 state <= GREEN;
-            end
-            else if(counter >= 512 && counter <= 575)begin
+            else if(counter >= 512 && counter <= 575)
                 state <= IDLE;
-            end
-            else if(counter >= 576 && counter <= 639)begin
+            else if(counter >= 576 && counter <= 639)
                 state <= GREEN;
-            end
-            else if(counter >= 640 && counter <= 703)begin
+            else if(counter >= 640 && counter <= 703)
                 state <= IDLE;
-            end
-            else if(counter >= 704 && counter <= 767)begin
+            else if(counter >= 704 && counter <= 767)
                 state <= GREEN;
-            end
-            else if(counter >= 768 && counter <= 1023)begin
+            else if(counter >= 768 && counter <= 1023)
                 state <= YELLOW;
-            end
-            else if(counter >= 1024 && counter <= 1535)begin
+            else if(counter >= 1024 && counter <= 1535)
                 state <= RED;
-            end
             else begin
                 counter <= 1;
                 state <= GREEN;
